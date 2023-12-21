@@ -37,23 +37,35 @@ namespace BPO_Calc_Back.Controllers
             return View();
         }
 
-        public IActionResult Sub()
+        [HttpPost]
+        public IActionResult Sub(CalcViewModel calc)
         {
+            if (calc.Calculate == "Sub")
+                ViewData["Result"] = calc.Value1 - calc.Value2;
             return View();
         }
 
-        public IActionResult Mult()
+        [HttpPost]
+        public IActionResult Mult(CalcViewModel calc)
         {
+            if (calc.Calculate == "Mult")
+                ViewData["Result"] = calc.Value1 * calc.Value2;
             return View();
         }
 
-        public IActionResult Div()
+        [HttpPost]
+        public IActionResult Div(CalcViewModel calc)
         {
+            if (calc.Calculate == "Div")
+                ViewData["Result"] = calc.Value1 / calc.Value2;
             return View();
         }
 
-        public IActionResult Pow()
+        [HttpPost]
+        public IActionResult Pow(CalcViewModel calc)
         {
+            if (calc.Calculate == "Pow")
+                ViewData["Result"] = Math.Pow(calc.Value1, calc.Value2);
             return View();
         }
     }
