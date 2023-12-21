@@ -1,0 +1,15 @@
+﻿@model CalcViewModel
+@{
+    ViewData["Title"] = "Sum Page";
+}
+
+<form method="post" asp-controller="HomeController" asp-action="Sum">
+    <label>First Value</label>
+    <input type="number" asp-for="Value1" />
+    <label>Second Value</label>
+    <input type="number" asp-for="Value2" />
+
+    <input type="submit" value="Sum" asp-for="Calculate" />
+    <label>Result</label>
+    <input type="number" asp-for="@ViewData["Result"]" />
+</form>
